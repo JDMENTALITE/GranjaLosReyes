@@ -1,0 +1,283 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Granja Los Reyes | Carne de Cerdo y Cerdos en Pie - Barranca</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Inter:wght@300;400;700;900&display=swap" rel="stylesheet">
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <style>
+        :root {
+            --navy: #1A2B4C;
+            --soft-pink: #FCE4EC;
+            --deep-pink: #F06292;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #ffffff;
+            color: var(--navy);
+        }
+
+        .font-impact { font-family: 'Bebas Neue', cursive; }
+
+        .bg-navy { background-color: var(--navy); }
+        .text-navy { color: var(--navy); }
+        .bg-soft-pink { background-color: var(--soft-pink); }
+        .text-deep-pink { color: var(--deep-pink); }
+        .border-soft-pink { border-color: var(--soft-pink); }
+
+        /* Hero con carne cruda premium */
+        .hero-bg {
+            background: linear-gradient(rgba(26, 43, 76, 0.8), rgba(26, 43, 76, 0.8)), 
+                        url('https://images.unsplash.com/photo-1603048588665-791ca8aea617?q=80&w=2000&auto=format&fit=crop');
+            background-size: cover;
+            background-position: center;
+        }
+
+        .whatsapp-float {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            z-index: 1000;
+            transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+        }
+        
+        .whatsapp-float:hover {
+            transform: scale(1.1) rotate(5deg);
+        }
+
+        .reveal {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: all 0.8s ease-out;
+        }
+
+        .reveal.active {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        .img-container {
+            overflow: hidden;
+            border-radius: 1.5rem;
+            background-color: var(--soft-pink);
+        }
+
+        .img-container img {
+            transition: transform 0.7s ease;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .img-container:hover img {
+            transform: scale(1.08);
+        }
+    </style>
+</head>
+<body class="overflow-x-hidden">
+
+    <!-- Navegación -->
+    <nav class="fixed w-full z-50 bg-white/95 backdrop-blur-md border-b border-pink-100 h-24 flex items-center">
+        <div class="max-w-7xl mx-auto px-6 w-full flex justify-between items-center">
+            <div class="flex items-center gap-4">
+                <img src="https://scontent.flim10-1.fna.fbcdn.net/v/t39.30808-6/602460972_122152136570933735_5501056068539628279_n.jpg?_nc_cat=108&ccb=1-7&_nc_sid=6ee11a&_nc_ohc=1GKWxliWeg0Q7kNvwFHQVhR&_nc_oc=AdmODOMAIuSigWbhS8lZg6L7XpufsTX9eTjzjSnumq5ubo5au4ge82Y-526eVCwHXTI&_nc_zt=23&_nc_ht=scontent.flim10-1.fna&_nc_gid=ipi5TgCRkK9ObDrKdrS-mg&oh=00_Aflsxmx2pnSr8vXPwdXe67yG2-aLgus6LnBER7EctXwx1w&oe=69507213" alt="Logo Granja Los Reyes" class="h-16 w-auto object-contain rounded-lg shadow-sm">
+                <div class="hidden sm:block">
+                    <p class="font-impact text-3xl text-navy leading-none uppercase tracking-tighter">Granja</p>
+                    <p class="font-impact text-xl text-deep-pink leading-none uppercase tracking-[0.2em]">Los Reyes</p>
+                </div>
+            </div>
+            
+            <div class="hidden lg:flex gap-10 font-bold text-xs uppercase tracking-widest text-navy">
+                <a href="#productos" class="hover:text-pink-500 transition">Nuestros Productos</a>
+                <a href="#granja" class="hover:text-pink-500 transition">La Granja</a>
+                <a href="#contacto" class="hover:text-pink-500 transition">Contacto</a>
+            </div>
+
+            <a href="https://wa.me/51981405174?text=Hola%20Granja%20Los%20Reyes,%20deseo%20realizar%20una%20cotización%20de%20carne%20de%20cerdo." 
+               class="bg-navy text-white px-8 py-3.5 rounded-xl font-bold text-xs tracking-widest hover:bg-pink-600 transition shadow-lg uppercase">
+                Cotizar Ahora
+            </a>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero-bg h-screen flex items-center pt-24">
+        <div class="max-w-7xl mx-auto px-6 w-full text-white">
+            <div class="max-w-3xl">
+                <span class="inline-block px-4 py-1 rounded bg-deep-pink text-white font-bold text-xs tracking-widest uppercase mb-6">
+                    Producción Directa - Barranca
+                </span>
+                <h1 class="font-impact text-7xl md:text-[9rem] mb-6 leading-[0.85] uppercase">
+                    CARNE <br> <span class="text-soft-pink">100% FRESCA</span>
+                </h1>
+                <p class="text-slate-200 text-lg md:text-2xl mb-10 font-light max-w-lg leading-relaxed">
+                    Especialistas en crianza de cerdos seleccionados. Garantizamos frescura absoluta y calidad superior en cada corte.
+                </p>
+                <div class="flex flex-wrap gap-4">
+                    <a href="#productos" class="bg-white text-navy px-12 py-5 rounded-2xl font-black text-sm tracking-widest hover:bg-soft-pink transition uppercase">
+                        VER PRODUCTOS
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Sección de Productos Crudos -->
+    <section id="productos" class="py-32 bg-white">
+        <div class="max-w-7xl mx-auto px-6">
+            <div class="mb-20">
+                <h2 class="font-impact text-5xl md:text-7xl text-navy uppercase leading-none mb-4">Materia Prima Premium</h2>
+                <p class="text-gray-500 font-bold uppercase tracking-widest text-xs">Sin procesos, sin congelados. De la granja a tu mesa.</p>
+                <div class="w-32 h-2 bg-deep-pink mt-6"></div>
+            </div>
+
+            <div class="grid md:grid-cols-3 gap-12">
+                <!-- Carne por Kilo -->
+                <div class="reveal group">
+                    <div class="img-container aspect-square mb-8 shadow-2xl">
+                        <img src="https://images.unsplash.com/photo-1628268909376-e8c44bb3153f?q=80&w=800&auto=format&fit=crop" alt="Carne de cerdo fresca cruda">
+                    </div>
+                    <h3 class="font-impact text-4xl text-navy mb-3 uppercase tracking-tighter">Carne por Kilo</h3>
+                    <p class="text-gray-500 text-sm mb-8 leading-relaxed">Panceta, costillas, pierna y lomo. Carne cruda seleccionada con el marmoleo ideal para un sabor auténtico.</p>
+                    <a href="https://wa.me/51981405174?text=Hola%20Granja%20Los%20Reyes,%20deseo%20cotizar%20carne%20de%20cerdo%20por%20kilo." class="block w-full py-5 bg-navy text-white text-center font-black text-xs tracking-widest rounded-2xl hover:bg-pink-600 transition uppercase shadow-xl">Cotizar por Kilo</a>
+                </div>
+
+                <!-- Lechón Crudo -->
+                <div class="reveal group" style="transition-delay: 200ms;">
+                    <div class="img-container aspect-square mb-8 shadow-2xl">
+                        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRuH2rJfy8wg1-IDJKqNhZy4cdtUNWyOlEeAVN6L-cItODQvfqBewQs57tG&s=10" alt="Lechón crudo preparado para hornear">
+                    </div>
+                    <h3 class="font-impact text-4xl text-navy mb-3 uppercase tracking-tighter">Lechón para Fiestas</h3>
+                    <p class="text-gray-500 text-sm mb-8 leading-relaxed">Lechones enteros de leche, limpios y frescos. Listos para que apliques tu receta secreta en Navidad y Año Nuevo.</p>
+                    <a href="https://wa.me/51902255220?text=Hola%20Granja%20Los%20Reyes,%20deseo%20cotizar%20un%20lechón%20para%20fiestas." class="block w-full py-5 bg-navy text-white text-center font-black text-xs tracking-widest rounded-2xl hover:bg-pink-600 transition uppercase shadow-xl">Cotizar Lechón</a>
+                </div>
+
+                <!-- Cerdos Vivos -->
+                <div class="reveal group" style="transition-delay: 400ms;">
+                    <div class="img-container aspect-square mb-8 shadow-2xl">
+                        <img src="https://images.unsplash.com/photo-1516467508483-a7212febe31a?q=80&w=800&auto=format&fit=crop" alt="Cerdos en la granja vivos">
+                    </div>
+                    <h3 class="font-impact text-4xl text-navy mb-3 uppercase tracking-tighter">Cerdos en Pie</h3>
+                    <p class="text-gray-500 text-sm mb-8 leading-relaxed">Venta directa de cerdos vivos para criaderos o consumo mayorista. Control sanitario riguroso en nuestra granja.</p>
+                    <a href="https://wa.me/51981405174?text=Hola%20Granja%20Los%20Reyes,%20deseo%20cotizar%20cerdos%20en%20pie%20(vivos)." class="block w-full py-5 border-2 border-navy text-navy text-center font-black text-xs tracking-widest rounded-2xl hover:bg-navy hover:text-white transition uppercase">Cotizar Cerdo Vivo</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Sección de Crianza -->
+    <section id="granja" class="py-32 bg-navy text-white overflow-hidden relative">
+        <div class="max-w-7xl mx-auto px-6 grid lg:grid-cols-2 gap-20 items-center">
+            <div class="reveal">
+                <span class="text-deep-pink font-bold uppercase tracking-widest text-xs mb-4">Nuestra Infraestructura</span>
+                <h2 class="font-impact text-6xl md:text-8xl mb-8 leading-none uppercase">CRIANZA <br><span class="text-soft-pink">PROPIA</span></h2>
+                <p class="text-slate-400 text-lg font-light leading-relaxed mb-12">
+                    En <strong>Granja Los Reyes</strong>, el control de calidad inicia desde el origen. Poseemos instalaciones modernas en Barranca donde criamos a nuestros animales con alimentación natural y balanceada.
+                </p>
+                <div class="grid grid-cols-2 gap-8">
+                    <div class="bg-white/5 p-8 rounded-3xl border border-white/10 hover:bg-white/10 transition">
+                        <i data-lucide="shield-check" class="text-deep-pink w-10 h-10 mb-4"></i>
+                        <h4 class="font-bold text-sm uppercase mb-1">Higiene</h4>
+                        <p class="text-xs text-slate-500">Protocolos estrictos de limpieza diaria.</p>
+                    </div>
+                    <div class="bg-white/5 p-8 rounded-3xl border border-white/10 hover:bg-white/10 transition">
+                        <i data-lucide="leaf" class="text-deep-pink w-10 h-10 mb-4"></i>
+                        <h4 class="font-bold text-sm uppercase mb-1">Salud</h4>
+                        <p class="text-xs text-slate-500">Supervisión veterinaria permanente.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="reveal relative">
+                <div class="img-container rounded-[3rem] shadow-2xl border-8 border-white/5">
+                    <img src="https://images.unsplash.com/photo-1599599810694-b5b37304c041?q=80&w=1000&auto=format&fit=crop" alt="Cerdo en granja de calidad">
+                </div>
+                <div class="absolute -top-10 -right-10 w-44 h-44 bg-deep-pink rounded-full flex items-center justify-center p-6 text-center shadow-2xl rotate-12 border-4 border-white">
+                    <p class="font-impact text-xl text-white leading-none uppercase">Garantía de Origen</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Sección de Contacto -->
+    <section id="contacto" class="py-32 bg-soft-pink">
+        <div class="max-w-5xl mx-auto px-6 text-center">
+            <h2 class="font-impact text-6xl text-navy uppercase mb-16">Pide tu Cotización Ahora</h2>
+            
+            <div class="grid md:grid-cols-2 gap-8">
+                <!-- Teléfono 1 -->
+                <a href="tel:981405174" class="bg-white p-12 rounded-[3rem] shadow-xl hover:-translate-y-2 transition-all group border-b-8 border-navy">
+                    <div class="w-16 h-16 bg-navy text-white rounded-full flex items-center justify-center mx-auto mb-6 group-hover:scale-110 transition">
+                        <i data-lucide="phone"></i>
+                    </div>
+                    <p class="text-[10px] font-bold text-gray-400 uppercase tracking-widest mb-2">Llamadas Directas</p>
+                    <span class="text-3xl font-black text-navy tracking-tighter">981-405-174</span>
+                </a>
+                
+                <!-- WhatsApp 2 -->
+                <a href="https://wa.me/51902255220" class="bg-white p-12 rounded-[3rem] shadow-xl hover:-translate-y-2 transition-all group border-b-8 border-navy">
+                    <div class="w-16 h-16 bg-green-500 text-white rounded-full flex items-center justify-center mx-auto mb-6 group-hover:scale-110 transition">
+                        <i data-lucide="message-square"></i>
+                    </div>
+                    <p class="text-[10px] font-bold text-gray-400 uppercase tracking-widest mb-2">WhatsApp Ventas</p>
+                    <span class="text-3xl font-black text-navy tracking-tighter">902-255-220</span>
+                </a>
+            </div>
+            
+            <p class="mt-20 text-navy font-bold text-sm tracking-widest uppercase opacity-50 italic">Abasteciendo a todo Barranca con la mejor carne de cerdo</p>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="py-16 bg-white border-t border-soft-pink">
+        <div class="max-w-7xl mx-auto px-6 flex flex-col md:flex-row justify-between items-center gap-10">
+            <div class="flex items-center gap-4">
+                <img src="https://scontent.flim10-1.fna.fbcdn.net/v/t39.30808-6/602460972_122152136570933735_5501056068539628279_n.jpg?_nc_cat=108&ccb=1-7&_nc_sid=6ee11a&_nc_ohc=1GKWxliWeg0Q7kNvwFHQVhR&_nc_oc=AdmODOMAIuSigWbhS8lZg6L7XpufsTX9eTjzjSnumq5ubo5au4ge82Y-526eVCwHXTI&_nc_zt=23&_nc_ht=scontent.flim10-1.fna&_nc_gid=ipi5TgCRkK9ObDrKdrS-mg&oh=00_Aflsxmx2pnSr8vXPwdXe67yG2-aLgus6LnBER7EctXwx1w&oe=69507213" alt="Granja Los Reyes" class="h-12 w-auto grayscale opacity-50 hover:grayscale-0 transition duration-500">
+                <p class="font-impact text-2xl text-navy uppercase">Granja <span class="text-deep-pink">Los Reyes</span></p>
+            </div>
+            <p class="text-gray-400 text-[10px] font-bold uppercase tracking-[0.3em]">© 2025 Productores de excelencia en Barranca, Lima - Perú.</p>
+        </div>
+    </footer>
+
+    <!-- Botón WhatsApp Flotante -->
+    <a href="https://wa.me/51981405174?text=Hola%20Granja%20Los%20Reyes,%20deseo%20realizar%20un%20pedido%20de%20carne%20de%20cerdo%20por%20kilo." 
+       class="whatsapp-float bg-green-500 text-white w-16 h-16 rounded-full flex items-center justify-center shadow-2xl border-4 border-white hover:bg-green-600 transition">
+        <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-message-circle"><path d="M7.9 20A9 9 0 1 0 4 16.1L2 22Z"/></svg>
+    </a>
+
+    <script>
+        // Inicializar Iconos
+        lucide.createIcons();
+
+        // Efecto Reveal al hacer Scroll
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('active');
+                }
+            });
+        }, { threshold: 0.1 });
+
+        document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+
+        // Smooth scroll para navegación
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const targetId = this.getAttribute('href');
+                if (targetId === '#') return;
+                const targetElement = document.querySelector(targetId);
+                if (targetElement) {
+                    window.scrollTo({
+                        top: targetElement.offsetTop - 80,
+                        behavior: 'smooth'
+                    });
+                }
+            });
+        });
+    </script>
+</body>
+</html>
+
